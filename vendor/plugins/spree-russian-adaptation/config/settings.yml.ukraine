@@ -1,0 +1,23 @@
+invoice:
+  company_name: "Интернет-магазин Фирма"
+  logo: "images/admin/bg/spree_50.png"
+payment:
+  sberbank:
+    bik: "000000000"
+    corr: "30100000000000000000"
+    inn: "0000000000"
+    kpp: "000000000"
+    recipient: "ООО «Фирма»"
+    recipient_bank: "ОАО «Банк»"
+    recipient_bank_city: "Москва"
+    settlement_acc: "40700000000000000000"
+  robokassa:
+    login: "login"
+    password1: "pass1"
+    password2: "pass2"
+country:
+  id: "211"
+  name: "Украина"
+  description: "Украина"
+  currency: "грн."
+  timezone: "Kyev"
