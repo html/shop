@@ -145,6 +145,12 @@ ru-RU:
   start: начало
   stop: конец
   number:
+    format: 
+      separator: "."
+      delimiter: ","
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
     currency:
       format:
         unit: грн
