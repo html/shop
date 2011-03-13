@@ -145,6 +145,9 @@ ru-RU:
   start: начало
   stop: конец
   number:
+    precision:
+      format:
+        delimiter: ""
     format: 
       separator: "."
       delimiter: ","
