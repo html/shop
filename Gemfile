@@ -6,7 +6,7 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'spree', '0.5.0'
+gem 'spree', '0.50.0'
 gem 'prawn'
 
 # Use unicorn as the web server
