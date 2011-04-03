@@ -1,7 +1,0 @@
-.DS_Store
-*.log
-pkg/*
-coverage/*
-doc/*
-benchmarks/*
-nbproject
