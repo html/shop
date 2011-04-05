@@ -1,5 +1,6 @@
-- last = Breadcrumbs.breadcrumbs.last
-- Breadcrumbs.breadcrumbs.each do |bc|
-  = link_to bc[:title], bc[:link]
-  - if bc != last
-    = image_tag '/images/bc_marker.png'
+- if defined?(Breadcrumbs)
+  - last = Breadcrumbs.breadcrumbs.last
+  - Breadcrumbs.breadcrumbs.each do |bc|
+    = link_to bc[:title], bc[:link]
+    - if bc != last
+      = image_tag '/images/bc_marker.png'
