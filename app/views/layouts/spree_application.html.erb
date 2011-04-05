@@ -78,11 +78,11 @@ end
 				<div id="content">            
 				<div class="breadcrumbs"><a href="index.html">Главная</a>
                 </div>
+                <div class="inner-content" <%= yield :main_uzor_bottom %>>
                 <%= yield %>
+              </div>
                 </div>
-                <div id="leftuzor"></div>
                 <%= yield :pagination %>
-                <div id="rightuzor"></div>                                                                
            	</div>
 	    </div>
 	    </div>

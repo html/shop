@@ -13,7 +13,11 @@ module ApplicationHelper
 
   def display_product_image_for_list(product)
     image = product.images.first
-    image_tag image.attachment.url(:product_list), :title => image.alt, :alt => image.alt
+    if image
+      image_tag image.attachment.url(:product_list), :title => image.alt, :alt => image.alt
+    else
+      "Картинка отсутствует"
+    end
   end
 
   def display_product_image_for_item(product)

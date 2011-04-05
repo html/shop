@@ -6,7 +6,11 @@ class CommonController < Spree::BaseController
 
   def production_by_type
     @taxon = Taxon.find_by_name params[:slug]
-    @products = @taxon.products.paginate(:page => params[:page], :per_page => 6)
+    if params[:page] && params[:page] == 'all'
+      @products = @taxon.products
+    else
+      @products = @taxon.products.paginate(:page => params[:page], :per_page => 6)
+    end
   end
 
   def product_by_type

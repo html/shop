@@ -10,4 +10,9 @@
       .image
         %a{:href => product_by_type_path(@taxon.name, product.id) }
           = display_product_image_for_list product
-  - paginate_items @products
+  - if @products.respond_to? :total_pages
+    - paginate_items @products
+  - else
+    - content_for :main_uzor_bottom do 
+      :plain
+        style="overflow-y: scroll"

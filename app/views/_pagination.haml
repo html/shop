@@ -1,3 +1,4 @@
+#leftuzor
 #previous
   - if true || previous_page
     - link_to url_for(:page => previous_page) do 
@@ -28,3 +29,7 @@
       Следующая&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       %br>/
       страница
+#rightuzor
+.clear
+%div{:style => "text-align: center;padding-top:3px"} 
+  = link_to 'Показать товары со всех страниц', by_type_path(@taxon.name, :page => 'all'), :class => 'view-all'
