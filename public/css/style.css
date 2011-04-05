@@ -45,7 +45,7 @@
 .fotoblock{width:280px;height:320px;float:left}
 .secondcol{margin:0px 0px 0px 48px}
 .name{padding:49px 0px 0px 10px;width:270px;height:51px;color:#fff;font:20px MyriadProBoldSemiExt;background:url(../images/gerb.png) no-repeat right bottom}
-.image{width:280px;height:220px}
+/* XXX .image{width:280px;height:220px}*/
 #leftuzor{width:185px;height:56px;background:url(../images/leftuzor.png) no-repeat bottom right;float:left}
 #previous{padding:30px 0px 0px 0px;width:90px;height:26px;float:left}
 #previous a,#next a{text-decoration:none;font:12px MyriadProBoldSemiExt;color:#fbf7c7}
@@ -78,7 +78,7 @@
 /*PROIZVODITEL SERVIZY IZDELIYA*/
 .izdeliya #header_r{background:url(../images/header_r4.png) no-repeat}
 .izdeliya .name{padding:33px 0px 0px 60px;width:468px;height:67px;font:16px MyriadProBoldSemiExt;background:none;text-align:center}
-.izdeliya .image{padding:0px 0px 0px 57px;width:471px;height:380px}
+/* XXX .izdeliya .image{padding:0px 0px 0px 57px;width:471px;height:380px}*/
 .izdeliya #desc{padding:10px 0px 0px 77px;width:451px;height:auto;color:#FFF;font:14px MyriadProBoldSemiExt}
 .izdeliya #order{padding:10px 0px 0px 77px;height:50px}
 .izdeliya #order a#add{padding:5px 5px 0px 0px;color:#e7c650;font:18px MyriadProBoldSemiExt;text-decoration:none;float:left}
@@ -106,3 +106,42 @@ textarea{width:340px;height:83px}
 .note{display:block;padding:7px 0px 0px 0px;height:25px;color:#fff;font:20px MyriadProLight}
 #leftform .note{padding:0px 0px 0px 0px;height:25px}
 .clear{width:0px;height:0px;clear:both}
+
+#product-images {
+    width: 270px;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+#product-images #main-image {
+    min-height: 250px;
+    position: relative;
+}
+
+ul.thumbnails {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.thumbnails li.selected {
+    border: 1px solid white;
+}
+ul.thumbnails li {
+    float: left;
+    margin-right: 5px;
+    padding: 3px;
+    position: relative;
+    width: 48px;
+    height: 48px;
+}
+
+#product-images #main-image img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

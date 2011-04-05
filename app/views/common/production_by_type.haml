@@ -9,5 +9,5 @@
         = product.name
       .image
         %a{:href => product_by_type_path(@taxon.name, product.id) }
-          %img{:alt => "", :src => "/images/foto_01.png"}/
+          = display_product_image_for_list product
   - paginate_items @products

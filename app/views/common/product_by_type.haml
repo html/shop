@@ -2,8 +2,16 @@
   izdeliya
 .name
   = @product.name
-.image
-  %img{:alt => "", :src => "/images/foto.png"}/
+
+= javascript_include_tag 'product'
+#product-images
+  = hook :product_images do 
+    #main-image
+      = render 'products/image'
+    #thumbnails
+      = render 'products/thumbnails', :product => @product
+  .clear
+
 #desc
   %table{ :style => "border: 1px solid white", :width => "100%", :cellspacing => 0, :cellpadding => 0 }
     - @product.product_properties(:include => :properties).each do |prop|

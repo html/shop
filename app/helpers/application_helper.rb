@@ -12,6 +12,12 @@ module ApplicationHelper
   end
 
   def display_product_image_for_list(product)
-    image_tag product.images.first.attachment.url(:product_list)
+    image = product.images.first
+    image_tag image.attachment.url(:product_list), :title => image.alt, :alt => image.alt
+  end
+
+  def display_product_image_for_item(product)
+    image = product.images.first
+    image_tag image.attachment.url(:product_view), :title => image.alt, :alt => image.alt
   end
 end
