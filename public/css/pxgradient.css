@@ -1,0 +1,39 @@
+.sn-pxg SPAN.pxg-source {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+.sn-pxg U.pxg-set,.sn-pxg U.pxg-set S.s,.sn-pxg U.pxg-set S.s B.b {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: inherit;
+  position: absolute;
+  overflow: hidden;
+  display: inline-block;
+  text-decoration: none;
+  font-weight:inherit;
+	padding:0px 0px 20px 0px;
+
+}
+
+
+
+
+*html #footer .sn-pxg U.pxg-set,*html #footer .sn-pxg U.pxg-set S.s,*html #footer .sn-pxg U.pxg-set S.s B.b
+{font:normal 14px MyriadProLight}
+*html #footer_l a{font:14px MyriadProLight}
+
+*+html #footer .sn-pxg U.pxg-set,*+html #footer .sn-pxg U.pxg-set S.s,*+html #footer .sn-pxg U.pxg-set S.s B.b
+{font:normal 14px MyriadProLight}
+*+html #footer_l a{font:14px MyriadProLight}
+
+
+.sn-pxg U.pxg-set {
+  text-decoration: none;
+  z-index: 1;
+  display:inline-block;
+  position:relative;
+}

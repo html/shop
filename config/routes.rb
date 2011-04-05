@@ -5,6 +5,8 @@ Shop::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  match 'po-tipu/:slug/:page' => 'common#production_by_type', :as => :by_type, :defaults => { :page => 1 }
+  match 'po-tipu/:slug/tovar/:id' => 'common#product_by_type', :as => :product_by_type
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

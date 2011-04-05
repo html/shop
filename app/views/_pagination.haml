@@ -1,0 +1,30 @@
+#previous
+  - if true || previous_page
+    - link_to url_for(:page => previous_page) do 
+      Предыдущая&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      %br>/
+      страница
+  - else
+    Предыдущая&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    %br>/
+    страница
+#numbers
+  %table{ :cellspacing => 0, :cellpadding => 0, :border => 0, :align => 'center' }
+    %tr
+      - for i in [first_page, (current_page - 1)].max.upto([last_page, current_page + 1].min)
+        %td{ :align => 'center' }
+          - if i == current_page
+            = link_to i, '#', :class => 'current'
+          - else
+            = link_to i, url_for(:page => i)
+#next
+  - if next_page
+    - link_to url_for(:page => next_page) do
+      Следующая&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      %br>/
+      страница
+  - else
+    - link_to '#' do
+      Следующая&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      %br>/
+      страница

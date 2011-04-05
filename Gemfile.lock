@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    Ascii85 (1.0.0)
     abstract (1.0.0)
     actionmailer (3.0.5)
       actionpack (= 3.0.5)
@@ -49,6 +50,7 @@ GEM
       abstract (>= 1.0.0)
     faker (0.9.5)
       i18n (~> 0.4)
+    haml (3.0.25)
     highline (1.5.1)
     i18n (0.5.0)
     jquery-rails (0.2.6)
@@ -74,14 +76,12 @@ GEM
     paperclip (2.3.8)
       activerecord
       activesupport
+    pdf-reader (0.9.1)
+      Ascii85 (>= 0.9)
     polyglot (0.3.1)
-    prawn (0.8.4)
-      prawn-core (< 0.9, >= 0.8.4)
-      prawn-layout (< 0.9, >= 0.8.4)
-      prawn-security (< 0.9, >= 0.8.4)
-    prawn-core (0.8.4)
-    prawn-layout (0.8.4)
-    prawn-security (0.8.4)
+    prawn (0.11.1)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.0)
     rack (1.2.2)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
@@ -153,6 +153,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    ttfunk (1.0.1)
     tzinfo (0.3.26)
     warden (1.0.3)
       rack (>= 1.0.0)
@@ -162,6 +163,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
   prawn
   rails (= 3.0.5)
   ruby-debug19

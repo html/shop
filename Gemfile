@@ -8,6 +8,7 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 gem 'spree', '0.50.0'
 gem 'prawn'
+gem 'haml'
 
 # Use unicorn as the web server
 # gem 'unicorn'

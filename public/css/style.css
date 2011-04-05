@@ -1,0 +1,108 @@
+
+/*RESET STYLES*/
+@charset "utf-8";
+@import url(reset.css);
+@import url(font.css);
+
+/*GLOBAL STYLES*/
+
+/*STRUCTURE*/
+#conteiner{margin:0px auto;width:1008px;height:auto}
+#header{height:194px}
+#header_l{width:18px;height:194px;background:url(../images/header_l.png) no-repeat;float:left}
+#logo{width:302px;height:194px;background:#d42a2a;float:left}
+#header_r{width:688px;height:194px;background:url(../images/header_r.png) no-repeat;float:left}
+#topline{width:1008px;height:6px;background:url(../images/topline.png) no-repeat;clear:both;font-size:1px}
+#main{height:1095px}
+#main_l{width:18px;height:1095px;background:url(../images/main_l.png) no-repeat;float:left}
+#menu{width:302px;height:1095px;background:#d42a2a url(../images/uzor.png) no-repeat left top;float:left}
+#first{padding:40px 0px 27px 22px;list-style:none}
+#first li{padding:0px 0px 0px 30px;height:40px;background:url(../images/marker1.png) no-repeat left center}
+#first li a{text-decoration:none;color:#f3cc7a;font:37px AndantinoscriptRegular, Arial, sans-serif;white-space: nowrap}
+#second{padding:45px 0px 0px 0px;list-style:none}
+#second li{padding:0px 0px 13px 0px;background:url(../images/marker2.png) no-repeat bottom;text-align:center}
+#second li a{text-decoration:none;color:#f3cc7a;font:37px AndantinoscriptRegular, Arial, sans-serif;white-space: nowrap}
+#search{padding:2px 0px 5px 26px;width:278px;height:19px;background:url(../images/search.png) no-repeat}
+*html #search{width:276px}
+#search input{padding:0px 3px 0px 4px;width:153px;height:20px;border:0px;color:#960}
+#search input{padding-top:2px\0/;height:17px\0/}
+*html #search input{padding-top:2px;height:17px}
+*+html #search input{padding-top:2px;height:17px}
+
+#search #submit{margin:0px 0px 0px 25px;width:auto;height:18px;border:0px;background:none;color:#e7c650;font:16px Arial, Helvetica, sans-serif;cursor:pointer}
+*html #search #submit{margin:0px 0px 0px 18px}
+*+html #search #submit{margin:0px 0px 0px 18px}
+#contacts{margin:30px 0px 0px 78px;padding:16px 0px 0px 0px;width:204px;height:142px;background:url(../images/contacts.png) no-repeat;color:#fff;font:18px MyriadProBoldSemiExt;text-align:center}
+#main_r{padding:0px 0px 0px 40px;width:648px;height:1095px;background:url(../images/main.jpg) no-repeat;float:left}
+#main_uzor_top{padding:0px;width:648px;height:1095px;background:url(../images/main_uzory_top.png) no-repeat right top}
+#main_uzor_bottom{padding:0px 40px 0px 0px;width:608px;height:1095px;background:url(../images/main_uzory_bot.png) no-repeat right bottom}
+
+#content{width:auto;height:1000px}
+.breadcrumbs{padding:20px 0px 0px 0px;height:20px}
+.breadcrumbs a{color:#e7c650;font:16px MyriadProLight;text-decoration:none}
+.breadcrumbs a:hover{color:#e7c650;font:16px MyriadProLight;text-decoration:underline;background:#d5a400}
+
+.fotoblock{width:280px;height:320px;float:left}
+.secondcol{margin:0px 0px 0px 48px}
+.name{padding:49px 0px 0px 10px;width:270px;height:51px;color:#fff;font:20px MyriadProBoldSemiExt;background:url(../images/gerb.png) no-repeat right bottom}
+.image{width:280px;height:220px}
+#leftuzor{width:185px;height:56px;background:url(../images/leftuzor.png) no-repeat bottom right;float:left}
+#previous{padding:30px 0px 0px 0px;width:90px;height:26px;float:left}
+#previous a,#next a{text-decoration:none;font:12px MyriadProBoldSemiExt;color:#fbf7c7}
+#numbers{padding:20px 5px 0px 5px;width:100px;height:auto;float:left;text-align:center}
+#numbers a{display:block;padding:10px 0px 0px 0px;margin:0px;height:auto;text-decoration:none;font:20px MyriadProBoldSemiExt;float:left;color:#fbf7c7}
+#numbers a.current{display:block;padding:10px 0px 0px 0px;margin:0px;height:auto;text-decoration:none;font:20px MyriadProBoldSemiExt;float:left;color: #fbf7c7}
+#numbers table td{border:0}
+#numbers table{border:0;margin:0}
+#next{padding:30px 0px 0px 0px;width:70px;height:26px;float:left}
+#rightuzor{width:150px;height:56px;background:url(../images/rightuzor.png) no-repeat bottom left;float:left}
+#bottomline{width:1008px;height:5px;background:url(../images/bottomline.png) no-repeat;clear:both;font-size:1px}
+#footer{width:1008px;height:117px;background:url(../images/footer.jpg) no-repeat;font:14px MyriadProLight;color:#f0e8b7}
+#footer_l a{display:block;height:20px;font:14px MyriadProLight;color:#f0e8b7;text-decoration:none}
+
+#footer_l{padding:37px 0px 0px 96px;width:224px;height:80px;float:left}
+#footer_r{padding:30px 0px 0px 113px;width:575px;height:87px;float:left}
+*html #footer_r{padding:30px 0px 0px 113px;height:87px;float:left}
+
+
+/*PROIZVODITEL*/
+#proizvoditel #header_r{background:url(../images/header_r2.png) no-repeat}
+#proizvoditel #text{padding:15px 0px 0px 65px;height:45px;color:#fff;font:16px MyriadProLight;background:url(../images/gerb2.png) no-repeat} 
+#proizvoditel .fotoblock{height:302px}
+#proizvoditel .name{padding:40px 0px 0px 44px;width:236px;height:42px;background:none}
+
+/*PROIZVODITEL SERVIZY*/
+.servizy #header_r{background:url(../images/header_r3.png) no-repeat}
+.servizy .name{padding:33px 0px 0px 10px;width:270px;height:67px;font:16px MyriadProBoldSemiExt;background:none}
+
+/*PROIZVODITEL SERVIZY IZDELIYA*/
+.izdeliya #header_r{background:url(../images/header_r4.png) no-repeat}
+.izdeliya .name{padding:33px 0px 0px 60px;width:468px;height:67px;font:16px MyriadProBoldSemiExt;background:none;text-align:center}
+.izdeliya .image{padding:0px 0px 0px 57px;width:471px;height:380px}
+.izdeliya #desc{padding:10px 0px 0px 77px;width:451px;height:auto;color:#FFF;font:14px MyriadProBoldSemiExt}
+.izdeliya #order{padding:10px 0px 0px 77px;height:50px}
+.izdeliya #order a#add{padding:5px 5px 0px 0px;color:#e7c650;font:18px MyriadProBoldSemiExt;text-decoration:none;float:left}
+
+/*BASCET*/
+.bascet #header_r{background:url(../images/header_r5.png) no-repeat}
+.bascet .breadcrumbs{color:#e7c650;font:30px MyriadProLight}
+#tabledata{height:600px}
+*html #tabledata{height:550px}
+table{margin:15px 0px 0px 0px;border-top:1px #FFF solid}
+td{padding:0px 0px 0px 8px;border-bottom:1px #FFF solid;border-left:1px #FFF solid}
+.lasttd{border-right:1px #FFF solid;border-left:none}
+.blank{height:9px;border-left:none}
+.titletr{height:29px;border:1px #fff solid;color:#fff;font:18px MyriadProLight;}
+.datatr{height:49px;border:1px #fff solid;color:#fff;font:16px MyriadProLight}
+table td.datatitle{background:url(../images/bordertd.png) no-repeat left;border-left:none}
+table td.data{padding:0px;background:url(../images/tdborder.png) no-repeat left;text-align:center;border-left:none}
+.cub{padding:0px 15px 0px 15px;border:1px #e8a640 solid}
+#leftform{float:left;width:145px}
+#rightform{float:left}
+form#bascet_form{padding:20px 0px 0px 0px;color:#fff;font:20px MyriadProLight}
+form#bascet_form input{width:340px;height:19px}
+form#bascet_form #button{margin:0px 115px 0px 0px;width:96px;height:37px;float:right}
+textarea{width:340px;height:83px}
+.note{display:block;padding:7px 0px 0px 0px;height:25px;color:#fff;font:20px MyriadProLight}
+#leftform .note{padding:0px 0px 0px 0px;height:25px}
+.clear{width:0px;height:0px;clear:both}

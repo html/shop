@@ -1,0 +1,25 @@
+- content_for :body_class do 
+  izdeliya
+.name
+  = @product.name
+.image
+  %img{:alt => "", :src => "/images/foto.png"}/
+#desc
+  %table{ :style => "border: 1px solid white", :width => "100%", :cellspacing => 0, :cellpadding => 0 }
+    - @product.product_properties(:include => :properties).each do |prop|
+      %tr
+        %td
+          = prop.property.name
+          \:
+        %td
+          = raw prop.value.gsub("\n", "<br />")
+  %br
+  Цена: 
+  = product_price @product
+#order
+  %a#add{:href => "#"}
+    Добавить
+    %br/
+    в карзину
+  %a{:href => "#"}
+    %img{:alt => "", :src => "/images/order.png"}/

@@ -1,0 +1,13 @@
+- content_for :body_class do 
+  servizy
+- if @products.empty?
+  Нет продуктов в данной категории
+- else
+  - @products.each do |product|
+    .fotoblock{ :class => cycle('','secondcol') }
+      .name
+        = product.name
+      .image
+        %a{:href => product_by_type_path(@taxon.name, product.id) }
+          %img{:alt => "", :src => "/images/foto_01.png"}/
+  - paginate_items @products
