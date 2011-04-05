@@ -32,4 +32,4 @@
 #rightuzor
 .clear
 %div{:style => "text-align: center;padding-top:3px"} 
-  = link_to 'Показать товары со всех страниц', by_type_path(@taxon.name, :page => 'all'), :class => 'view-all'
+  = link_to 'Показать товары со всех страниц', url_for(:page => 'all'), :class => 'view-all'

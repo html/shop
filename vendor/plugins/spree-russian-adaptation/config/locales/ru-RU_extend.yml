@@ -7,6 +7,7 @@ ru-RU:
           attributes:
             name:
               blank: Имя не может быть пустым
+  continue_shopping: Продолжить покупки
   shopping_cart: Корзина            
   your_cart_is_empty: Ваша корзина пуста
   home: На главную

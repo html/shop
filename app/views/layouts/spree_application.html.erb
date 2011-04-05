@@ -62,21 +62,20 @@ end
 	                </form>
                 </div>
                 <ul id="second">
-                    <% @categories = Taxon.find_by_name(Spree::Config[:product_categories_taxon]) %>
-                    <% if @categories %>
-                        <% @categories.children.each do |taxon| %>
-                            <li><a href="<%= by_type_path(taxon.name) %>"><%= taxon.name %></a></li>
-                        <% end %>
-                    <% else %>
-                        Пожалуйста установите опцию product_categories_taxon в значение соответствующее родительскому taxon
-                    <% end %>
+                  <% content = yield(:left_menu) %>
+                  <% if !content.blank? %>
+                    <%= raw(content) %>
+                  <% else %>
+                    <%= render :partial => '/left_menu' %>
+                  <% end %>
                 </ul>
 	        </div>
 	        <div id="main_r">
             	<div id="main_uzor_top">
                 <div id="main_uzor_bottom">
 				<div id="content">            
-				<div class="breadcrumbs"><a href="index.html">Главная</a>
+                  <div class="breadcrumbs">
+                    <%= render :partial => "/breadcrumbs" %>
                 </div>
                 <div class="inner-content" <%= yield :main_uzor_bottom %>>
                 <%= yield %>

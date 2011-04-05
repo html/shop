@@ -1,0 +1,9 @@
+<% @categories = Taxon.find_by_name(Spree::Config[:product_categories_taxon]) %>
+<% if @categories %>
+    <% @categories.children.each do |taxon| %>
+        <li><a href="<%= by_manufacturer_and_type_path(@taxon.name, taxon.name) %>"><%= taxon.name %></a></li>
+    <% end %>
+<% else %>
+    Пожалуйста установите опцию product_categories_taxon в значение соответствующее родительскому taxon
+<% end %>
+
