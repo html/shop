@@ -24,10 +24,15 @@
   %br
   Цена: 
   = product_price @product
-#order
-  %a#add{:href => populate_orders_url }
-    Добавить
-    %br/
-    в карзину
-  %a{:href => "#"}
-    %img{:alt => "", :src => "/images/order.png"}/
+
+= hook :cart_form do 
+  #cart-form
+    = render 'cart_form'
+/ 
+  #order
+    %a#add{:href => populate_orders_url }
+      Добавить
+      %br/
+      в карзину
+    %a{:href => "#"}
+      %img{:alt => "", :src => "/images/order.png"}/

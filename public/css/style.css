@@ -149,3 +149,9 @@ ul.thumbnails li {
 .inner-content {
   height: 1050px;
 }
+
+a {
+    color: #E7C650;
+    font: 16px MyriadProLight;
+    text-decoration: underline; 
+}

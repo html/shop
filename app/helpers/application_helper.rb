@@ -7,10 +7,6 @@ module ApplicationHelper
     end
   end
 
-  def product_price(product)
-    product.master.price.to_s + " грн."
-  end
-
   def display_product_image_for_list(product)
     image = product.images.first
     if image
