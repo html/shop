@@ -21,7 +21,7 @@ class Breadcrumbs
   end
 
   def self.add_article(article)
-    @@breadcrumbs << { :link => @@controller.url_for(article.title), :title => article.title}
+    @@breadcrumbs << { :link => @@controller.url_for(article.link), :title => article.title}
     self
   end
 

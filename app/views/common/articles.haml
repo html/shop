@@ -1,4 +1,4 @@
-- @articles = Page.all
+- @articles = Page.sidebar_links.find(:all)
 - if @articles.empty?
   Статьи отсутствуют
 - else

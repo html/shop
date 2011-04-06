@@ -12,7 +12,8 @@ class Image < Asset
                     }},
                     :default_style => :product,
                     :url => "/assets/products/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+                    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension",
+                    :default_url => "/images/default_taxon.png"
 
   # save the w,h of the original image (from which others can be calculated)
   # we need to look at the write-queue for images which have not been saved yet

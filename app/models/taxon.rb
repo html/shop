@@ -7,7 +7,13 @@ class Taxon < ActiveRecord::Base
 
   validates :name, :presence => true
   has_attached_file :icon,
-                :styles => { :mini => '32x32>', :normal => '128x128>', :main => '280x220#' },
+                :styles => { :mini => '32x32>', :normal => '128x128>',
+                      :main => {
+                      :processors => [:thumbnail, :watermark],
+                      :geometry => "280x220#",
+                      :watermark_path => ":rails_root/public/images/watermark_border.png",
+                      :position => 'Center'
+                    }},
                 :default_style => :mini,
                 :url => "/assets/taxons/:id/:style/:basename.:extension",
                 :path => ":rails_root/public/assets/taxons/:id/:style/:basename.:extension",
