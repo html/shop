@@ -66,10 +66,10 @@
 
 
 /*PROIZVODITEL*/
-#proizvoditel #header_r{background:url(../images/header_r2.png) no-repeat}
-#proizvoditel #text{padding:15px 0px 0px 65px;height:45px;color:#fff;font:16px MyriadProLight;background:url(../images/gerb2.png) no-repeat} 
-#proizvoditel .fotoblock{height:302px}
-#proizvoditel .name{padding:40px 0px 0px 44px;width:236px;height:42px;background:none}
+.proizvoditel #header_r{background:url(../images/header_r2.png) no-repeat}
+.proizvoditel #text{padding:15px 0px 0px 65px;height:45px;color:#fff;font:16px MyriadProLight;background:url(../images/gerb2.png) no-repeat} 
+.proizvoditel .fotoblock{height:302px}
+.proizvoditel .name{padding:40px 0px 0px 44px;width:236px;height:42px;background:none}
 
 /*PROIZVODITEL SERVIZY*/
 .servizy #header_r{background:url(../images/header_r3.png) no-repeat}

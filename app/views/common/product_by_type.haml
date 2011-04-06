@@ -25,9 +25,10 @@
   Цена: 
   = product_price @product
 #order
-  %a#add{:href => "#"}
+  %a#add{:href => populate_orders_url }
     Добавить
     %br/
     в карзину
   %a{:href => "#"}
     %img{:alt => "", :src => "/images/order.png"}/
+= image_tag @product.images.last.attachment.url(:product_list_watermarked2)

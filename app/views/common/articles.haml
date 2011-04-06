@@ -1,0 +1,6 @@
+- @articles = Page.all
+- if @articles.empty?
+  Статьи отсутствуют
+- else
+  - @articles.each do |item|
+    = link_to item.title, item.link

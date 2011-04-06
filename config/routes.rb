@@ -11,6 +11,7 @@ Shop::Application.routes.draw do
   match 'proizvoditel/:manufacturer/po-tipu/:slug/:type_page' => 'common#production_by_manufacturer_and_type', :as => :by_manufacturer_and_type, :defaults => { :type_page => 1 }
   match 'proizvoditel/:manufacturer/tovar/:id' => 'common#product_by_manufacturer', :as => :product_by_manufacturer
   match 'proizvoditel/:manufacturer/:slug/tovar/:id' => 'common#product_by_manufacturer_and_type', :as => :product_by_manufacturer_and_type
+  match 'articles' => 'common#articles', :as => :articles
   root :to => 'common#main'
 
   # Sample of named route:

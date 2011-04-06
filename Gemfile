@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'spree', '0.50.0'
 gem 'prawn'
 gem 'haml'
+gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content.git', :branch => 'master'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

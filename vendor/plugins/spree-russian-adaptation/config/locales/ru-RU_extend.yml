@@ -1,5 +1,23 @@
 ---
 ru-RU:
+# BEGIN static content extension translation
+  ext_static_content_editing_page: Страница редактирования
+  ext_static_content_static_pages: Статические страницы
+  ext_static_content_new_page: Создать страницу
+  ext_static_content_title: Заголовок страницы
+  ext_static_content_link: Ссылка на страницу
+  ext_static_content_visible: Страница отображаема ?
+  ext_static_content_slug: Slug для страницы
+  ext_static_content_body: Содержание страницы
+  ext_static_content_meta_keywords: Ключевые слова
+  ext_static_content_meta_description: Описание
+  ext_static_content_show_in_sidebar: Отображать сбоку
+  ext_static_content_show_in_header: Отображать сверху
+  ext_static_content_show_in_footer: Отображать сверху
+  ext_static_content_position: Позиция контента
+  ext_static_content_layout: Layout для контента
+  pages: Страницы
+# END
   activerecord:
     errors:
       models: 
@@ -167,6 +185,7 @@ ru-RU:
     listing: список
     create: создать
     cancel: отмена
+    update: обновить
   prototype: прототип
   update: сохранить
   add_option_types: Добавить характеристики
