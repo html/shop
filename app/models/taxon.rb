@@ -9,8 +9,9 @@ class Taxon < ActiveRecord::Base
   has_attached_file :icon,
                 :styles => { :mini => '32x32>', :normal => '128x128>',
                       :main => {
-                      :processors => [:thumbnail, :watermark],
+                      :processors => [:thumbnail, :watermark, :transparent],
                       :geometry => "280x220#",
+                      :format => 'png',
                       :watermark_path => ":rails_root/public/images/watermark_border.png",
                       :position => 'Center'
                     }},
