@@ -7,6 +7,8 @@
     .fotoblock{ :class => cycle('','secondcol') }
       .name
         = product.name
+        .clear
+        = product_price product
       .image
         %a{:href => product_by_type_path(@taxon.name, product.id) }
           = display_product_image_for_list product
