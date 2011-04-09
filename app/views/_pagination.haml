@@ -12,7 +12,8 @@
 #numbers
   %table{ :cellspacing => 0, :cellpadding => 0, :border => 0, :align => 'center' }
     %tr
-      - for i in [first_page, (current_page - 1)].max.upto([last_page, current_page + 1].min)
+      - page_from = [first_page, (current_page - 1)].max
+      - for i in page_from.upto([last_page, page_from + 2].min)
         %td{ :align => 'center' }
           - if i == current_page
             = link_to i, '#', :class => 'current'
