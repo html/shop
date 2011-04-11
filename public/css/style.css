@@ -197,7 +197,7 @@ table#cart-detail td {
   display: block;
   padding: 5px;
 }
-.progress-steps li.current {
+.progress-steps li.current, .progress-steps li.current-first {
   font-weight: bold;
 }
 #payment-methods {
