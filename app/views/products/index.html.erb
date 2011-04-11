@@ -1,20 +1,26 @@
-<% @taxonomy = Taxon.find_by_name(Spree::Config[:product_manufacturers_taxon]) %>
-<% if @taxonomy %>
-<% i = 0 %>
-<% @taxonomy.children.each do |item| %>
-    <% i+= 1%>
-    <div class="fotoblock<%= (i % 2) == 0 ? ' secondcol' : '' %> ">
-	<div class="name">
-        <%= item.name %>
-    </div>
-    <div class="image">
-    	<a href="<%= by_manufacturer_path item.name %>"><img src="<%= item.icon.url(:main) %>" alt=""/></a>
-    </div>
-</div>
+<% content_for :sidebar do %>
+  <%= hook :homepage_sidebar_navigation do %>
+    <% if "products" == @current_controller && @taxon %>
+      <%= render "shared/filters" %>
+    <% else %>
+      <%= render "shared/taxonomies" %>
+    <% end %>
+  <% end %>
 <% end %>
+
+
+<% if params[:keywords] %>
+
+  <%= hook :search_results do %>
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
+  <% end %>
+
 <% else %>
-  Не найдено элементов в категории 
-  "<%= Spree::Config[:product_manufacturers_taxon] %>"
-  <br/>
-  (опция конфигурации product_manufacturers_taxon)
+
+  <%= hook :homepage_products do %>
+    <%= render "shared/products", :products => @products, :taxon => @taxon %>
+  <% end %>
+
+
 <% end %>
+

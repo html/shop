@@ -4,4 +4,10 @@ ru:
     currency:
       format:
         unit: грн.
-  
+  activerecord: 
+    errors: 
+      models: 
+        user:
+          attributes:
+            email: 
+              taken: уже используется кем-то

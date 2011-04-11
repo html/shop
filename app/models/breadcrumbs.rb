@@ -58,5 +58,19 @@ class Breadcrumbs
   def self.set_controller(controller)
     @@controller = controller
   end
+
+  def self.add_search(search_param)
+    @@breadcrumbs << { :link => @@controller.products_path(:keywords => search_param), :title => "Поиск по запросу \"#{search_param}\"" }
+    self
+  end
+
+  def self.add_product_with_search(product, search_param)
+    @@breadcrumbs << { :link => @@controller.product_path(product, :keywords => search_param), :title => product.name}
+    self
+  end
+
+  def self.add_cart
+    @@breadcrumbs << { :link => @@controller.cart_path, :title => "Моя корзина" }
+  end
 end
 

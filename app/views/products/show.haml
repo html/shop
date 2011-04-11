@@ -1,3 +1,5 @@
+- Breadcrumbs.set_controller @controller
+- Breadcrumbs.add_main.add_search(h(params[:search_query])).add_product_with_search(@product, h(params[:search_query]))
 - content_for :body_class do 
   izdeliya
 .name
@@ -25,4 +27,4 @@
   Цена: 
   = product_price @product
 
-= render :partial => 'order_form'
+= render :partial => 'common/order_form'

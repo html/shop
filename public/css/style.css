@@ -155,3 +155,51 @@ a {
     font: 16px MyriadProLight;
     text-decoration: underline; 
 }
+ul.product-listing {
+  list-style: none;
+}
+
+ul.product-listing li {
+  clear: both;
+}
+
+ul.product-listing a {
+  float:left;
+  display: block;
+  width: 100px;
+  padding: 5px;
+  background-color: #D42A2A;
+  margin-bottom: 5px;
+}
+
+ul.product-listing a.info {
+  display: block;
+  width: auto;
+  background-color: #D42A2A;
+}
+
+table#cart-detail {
+  border: 0;
+}
+table#cart-detail td {
+  border: 0;
+  padding: 5px;
+}
+
+/* checkout forms */
+.progress-steps {
+  display: block;
+  float: left;
+  background-color: #D42A2A;
+}
+.progress-steps li {
+  float: left;
+  display: block;
+  padding: 5px;
+}
+.progress-steps li.current {
+  font-weight: bold;
+}
+#payment-methods {
+  list-style-type: none;
+}

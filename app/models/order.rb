@@ -132,7 +132,7 @@ class Order < ActiveRecord::Base
   # This method should never do anything to the Order that results in a save call on the object (otherwise you will end
   # up in an infinite recursion as the associations try to save and then in turn try to call +update!+ again.)
   def update!
-    #update_totals
+    update_totals_native
     update_payment_state
 
     # give each of the shipments a chance to update themselves
@@ -140,7 +140,7 @@ class Order < ActiveRecord::Base
     update_shipment_state
     update_adjustments
     # update totals a second time in case updated adjustments have an effect on the total
-    #update_totals
+    update_totals_native
 
     update_attributes_without_callbacks({
       :payment_state => payment_state,
@@ -445,8 +445,15 @@ class Order < ActiveRecord::Base
   # +total+              The so-called "order total."  This is equivalent to +item_total+ plus +adjustment_total+.
   def update_totals
     # update_adjustments
-    return
     self.payment_total = payments.completed.map(&:amount).sum
+    self.item_total = line_items.map(&:amount).sum
+    self.adjustment_total = adjustments.map(&:amount).sum
+    self.total = item_total + adjustment_total
+  end
+
+  def update_totals_native
+    # update_adjustments
+    #self.payment_total = payments.completed.map(&:amount).sum
     self.item_total = line_items.map(&:amount).sum
     self.adjustment_total = adjustments.map(&:amount).sum
     self.total = item_total + adjustment_total

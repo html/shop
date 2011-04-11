@@ -52,8 +52,8 @@ end
                 	<li><a href="/dostavka">доставка и оплата</a></li>
                 </ul>
 				<div id="search">
-	                <form name="search" method="post" action="#">
-						<input type="text" name="vvod" size="15"/>
+	                <form name="search" method="get" action="<%= products_path %>">
+						<input type="text" name="keywords" size="15"/>
 						<input type="submit" id="submit" value="Поиск"/>                        
 	                </form>
                 </div>
@@ -74,6 +74,14 @@ end
                     <%= render :partial => "/breadcrumbs" %>
                 </div>
                 <div class="inner-content" <%= yield :main_uzor_bottom %>>
+
+      <% if flash.notice %>
+      <div class="flash notice"><%= flash.notice %></div>
+      <% end %>
+      <% if flash[:error] %>
+      <div class="flash errors"><%= flash[:error] %></div>
+      <% end %>
+
                 <%= yield %>
               </div>
                 </div>

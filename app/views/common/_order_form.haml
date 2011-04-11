@@ -1,0 +1,17 @@
+= hook :cart_form do 
+  - form_for :order, :url => populate_orders_url do |f|
+    #order
+      %div{ :style=> "float:left;padding: 10px;" }
+        = text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => "title", :size => 3
+      %div{ :style=> "float:left" }
+        %a#add.submit{:href => 'javascript:;' }
+          Добавить
+          %br/
+          в корзину
+        %a.submit{:href => "javascript:;"}
+          %img{:alt => "", :src => "/images/order.png"}/
+        %input{ :type => "submit", :style => "display:none" }
+        :javascript
+          $('.submit').click(function(){
+            $('input[type=submit]').click();
+          });
