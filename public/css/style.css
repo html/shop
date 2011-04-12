@@ -196,10 +196,23 @@ table#cart-detail td {
   float: left;
   display: block;
   padding: 5px;
+  font-size: 18px;
+}
+.progress-steps li a {
+  font-size: inherit !important;
+  font-size: 18px;
 }
 .progress-steps li.current, .progress-steps li.current-first {
   font-weight: bold;
 }
 #payment-methods {
   list-style-type: none;
+}
+
+label.error {
+  clear: left;
+  float: left;
+  font-weight: bold;
+  padding: 5px;
+  background-color: red;
 }

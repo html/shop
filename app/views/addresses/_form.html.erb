@@ -1,4 +1,36 @@
-<% ADDRESS_FIELDS.each do |field| %>
+<%= javascript_include_tag 'jquery.validate.messages_ru' %>
+<table>
+  <% field = 'firstname' %>
+  <tr>
+    <td><%= address_form.label field, t(field, :scope => [:activerecord, :attributes, :address]) %></td>
+    <td><%= address_form.text_field field, :class => 'required' %><span class="req">*</span></td>
+  </tr>
+  <% field = 'phone' %>
+  <tr>
+    <td><%= address_form.label field, t(field, :scope => [:activerecord, :attributes, :address]) %></td>
+    <td><%= address_form.text_field field, :class => 'required' %><span class="req">*</span></td>
+  </tr>
+  <% field = 'city' %>
+  <tr>
+    <td><%= address_form.label field, t(field, :scope => [:activerecord, :attributes, :address]) %></td>
+    <td><%= address_form.text_field field, :class => 'required' %><span class="req">*</span></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= text_field :order, :email %></td>
+  </tr>
+  <% field = 'address1' %>
+  <tr>
+    <td><%= address_form.label field, t(field, :scope => [:activerecord, :attributes, :address]) %></td>
+    <td><%= address_form.text_area field %></td>
+  </tr>
+  <% field = 'address2' %>
+  <tr>
+    <td><%= address_form.label field, t(field, :scope => [:activerecord, :attributes, :address]) %></td>
+    <td><%= address_form.text_area field %></td>
+  </tr>
+</table>
+<% [].each do |field| %>
   <p id="<%= [address_name, field].join('_') %>" class="field">
     <% if field == "country" %>
     <% elsif field == "state" && Spree::Config[:address_requires_state] %>

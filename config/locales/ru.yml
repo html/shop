@@ -5,6 +5,11 @@ ru:
       format:
         unit: грн.
   activerecord: 
+    attributes:
+      address:
+        firstname: ФИО
+        address1: Комментарии
+        address2: Адрес
     errors: 
       models: 
         user:
