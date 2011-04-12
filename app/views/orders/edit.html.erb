@@ -1,6 +1,7 @@
 <% Breadcrumbs.set_controller @controller %>
 <% Breadcrumbs.add_main.add_cart %>
 <% @body_id = 'cart' %>
+<%= javascript_include_tag 'application' %>
 
 <h1><%= t("shopping_cart")%></h1>
 
@@ -9,7 +10,7 @@
   <%= hook :empty_cart do %>
     <p><%= t("your_cart_is_empty.") %></p>
     <br />
-    <p><%=link_to t("continue_shopping"), root_path, :class => 'button continue' %></p>
+            <input type="button" value="продолжить покупки" onclick='document.location = <%= root_path.to_json %>'/>
   <% end %>
 
 <% else %>
@@ -27,7 +28,7 @@
           <div class="links">
             <input type="button" value="Пересчитать" onclick="$('form#updatecart').submit(); return false;" /> * (используйте для обновления количества товаров)
             <br/>
-            <input type="button" value="Продолжить покупки" onclick='document.location = <%= root_path.to_json %>'/>
+            <input type="button" value="продолжить покупки" onclick='document.location = <%= root_path.to_json %>'/>
           </div>
         </div>
 
