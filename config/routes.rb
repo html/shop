@@ -13,6 +13,7 @@ Shop::Application.routes.draw do
   match 'proizvoditel/:manufacturer/:slug/tovar/:id' => 'common#product_by_manufacturer_and_type', :as => :product_by_manufacturer_and_type
   match 'articles' => 'common#articles', :as => :articles
   root :to => 'common#main'
+  match '/checkout' => 'checkout#update', :state => 'address', :as => :checkout
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

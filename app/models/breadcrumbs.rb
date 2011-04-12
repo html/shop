@@ -60,7 +60,7 @@ class Breadcrumbs
   end
 
   def self.add_search(search_param)
-    @@breadcrumbs << { :link => @@controller.products_path(:keywords => search_param), :title => "Поиск по запросу \"#{search_param}\"" }
+    @@breadcrumbs << { :link => @@controller.products_path(:keywords => search_param), :title => (search_param.blank? ? "Продукты" : "Поиск по запросу \"#{search_param}\"") }
     self
   end
 
@@ -71,6 +71,17 @@ class Breadcrumbs
 
   def self.add_cart
     @@breadcrumbs << { :link => @@controller.cart_path, :title => "Моя корзина" }
+    self
+  end
+
+  def self.add_ordering
+    @@breadcrumbs << { :link => @@controller.checkout_state_path('address'), :title => "Оформление заказа" }
+    self
+  end
+
+  def self.add_order_show(order)
+    @@breadcrumbs << { :link => @@controller.url_for, :title => "Просмотр заказа № " + (order.number) }
+    self
   end
 end
 

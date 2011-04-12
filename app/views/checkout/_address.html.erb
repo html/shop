@@ -9,8 +9,9 @@
 <% ['billing', 'shipping'].each do |address_type|
   next if address_type == 'billing' && Spree::Config[:disable_bill_address]
   address_name = "#{address_type[0...4]}_address" %>
+  <br />
 <fieldset id="<%= address_type %>">
-  <legend><%= t(address_type + "_address")%></legend>
+  <legend><b><%= t(address_type + "_address")%></b></legend>
   <% if address_type == 'shipping' && !Spree::Config[:disable_bill_address] %>
     <p class="field checkbox">
       <label for="order_use_billing" id="use_billing">
@@ -45,7 +46,7 @@
 
 <hr class="space" />
 <div class="form-buttons">
-  <input type="submit" class="continue button primary" value="<%=t("save_and_continue") %>" />
+  <input type="submit" class="continue button primary" value="Оформить заказ" />
 </div>
 <% if @addresses.present? %>
   <%= javascript_tag do %>

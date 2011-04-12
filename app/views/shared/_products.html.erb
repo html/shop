@@ -6,7 +6,11 @@
 %>
 <br />
 <% if params.key?(:keywords) %>
+  <% if params[:keywords].blank? %>
+    <h3>Все продукты</h3>
+  <% else %>
   <h3><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
 <% end %>
 <br />
 <div style="background-color: #D42A2A;padding: 10px 0;">

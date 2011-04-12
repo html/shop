@@ -16,3 +16,11 @@ ru:
           attributes:
             email: 
               taken: уже используется кем-то
+        address:
+          attributes:
+            phone: 
+              blank: не может быть пустым
+            firstname:
+              blank: не может быть пустым
+            city:
+              blank: не может быть пустым

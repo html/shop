@@ -76,6 +76,7 @@ class Order < ActiveRecord::Base
   # order state machine (see http://github.com/pluginaweek/state_machine/tree/master for details)
   state_machine :initial => 'cart', :use_transactions => false do
 
+    if false
     event :next do
       transition :from => 'cart',     :to => 'address'
       transition :from => 'address',  :to => 'delivery'
@@ -87,6 +88,10 @@ class Order < ActiveRecord::Base
                                       :if => Proc.new { Gateway.current && Gateway.current.payment_profiles_supported? }
 
       transition :from => 'payment', :to => 'complete'
+    end
+    end
+    event :next do
+      transition :from => 'address', :to => 'complete'
     end
 
     event :cancel do

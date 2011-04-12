@@ -1,6 +1,8 @@
 CheckoutController.class_eval do
   after_filter :normalize_addresses, :only => :update
   before_filter :set_addresses, :only => :update
+  skip_before_filter :check_authorization
+  skip_before_filter :check_registration
   
   protected
   
