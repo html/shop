@@ -21,26 +21,26 @@
           <%= render :partial => 'form', :locals => {:order_form => order_form} %>
         <% end %>
 
-        <div id="subtotal" style="float:right;background-color:#D42A2A;padding:10px;">
-          <h3><%= "#{t("subtotal")}: #{order_price(@order)}" %></h3>
+          <h3 style="float:right"><%= "#{t("subtotal")}: #{order_price(@order)}" %></h3>
+          <div class="clear"></div>
+        <div id="subtotal" style="background-color:#D42A2A;padding:10px;width:100%">
           <div class="links">
-            <%= link_to image_tag('/images/update.png') + t("update"), '#', :class => 'button checkout primary', :onclick => "$('form#updatecart').submit(); return false;" %>
-            <%= link_to image_tag('/images/checkout.png') + t("checkout"), checkout_state_path('address'), :class => 'button checkout primary' %>
+            <input type="button" value="Пересчитать" onclick="$('form#updatecart').submit(); return false;" /> * (используйте для обновления количества товаров)
+            <br/>
+            <input type="button" value="Продолжить покупки" onclick='document.location = <%= root_path.to_json %>'/>
           </div>
         </div>
-
-        <p><%=link_to t("continue_shopping"), root_path, :class => 'button continue' %></p>
 
       <% end %>
     <% end %>
   <% end %>
   
-  <div class="clear"></div>
-  <br />
-  <%= form_tag empty_cart_path, :method => :put, :style => "float:right" do %>
-    <p id="clear_cart_link">
-      <input type="submit" value="<%= t('empty_cart') %>" class="button" />
-    </p>
-  <% end %>
+        <div class="clear"></div>
+        <div style="float:left;margin-left:150px">
+          <% link_to checkout_state_path('address'), :style => "display:block;" do %>
+          <%= image_tag('/images/cart.png', :align => "left") %>
+          <div style="font-size:36px;font-weight:bold;float:left;padding-top:20px;">Оформить<br/> заказ !</div>
+        <% end %>
+        </div>
 
 <% end %>
