@@ -9,6 +9,9 @@ class CheckoutController < Spree::BaseController
 
   # Updates the order and advances to the next state (when possible.)
   def update
+    # Setting Ukraine as country explicitly
+    (object_params[:ship_address_attributes][:country_id] = 211) rescue nil
+
     if @order.update_attributes(object_params)
       if @order.next
         state_callback(:after)
