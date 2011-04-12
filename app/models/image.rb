@@ -1,13 +1,14 @@
 require 'paperclip/watermark'
 require 'paperclip/transparent'
+require 'paperclip/extent'
 
 class Image < Asset
   validate :no_attachement_errors
   has_attached_file :attachment,
                     :styles => { :mini => '48x48>', :small => '100x100>', :product => '240x240>', :product_view => "471x380", :large => '600x600>', 
                       :product_list => {
-                      :processors => [:thumbnail, :watermark, :transparent],
-                      :geometry => "280x220#",
+                      :processors => [:thumbnail, :extent, :watermark, :transparent],
+                      :geometry => "280x220>",
                       :format => 'png',
                       :watermark_path => ":rails_root/public/images/watermark_border.png",
                       :position => 'Center'
