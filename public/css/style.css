@@ -216,3 +216,23 @@ label.error {
   padding: 5px;
   background-color: red;
 }
+
+.checkout {
+  color: white;
+  float:left;
+  margin-left:150px;
+}
+
+.checkout:hover a {
+  text-decoration: underline;
+}
+
+.checkout .checkout-text {
+  font-size:36px;
+  font-weight:bold;
+  float:left;
+  padding-top:20px;
+  color: white;
+  text-align:center;
+  text-decoration: underline;
+}

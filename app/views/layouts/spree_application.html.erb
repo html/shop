@@ -48,7 +48,7 @@ end
                 	<li><a href="<%= root_path %>">на главную</a></li>
                 	<li><a href="#">новинки в продаже (!)</a></li>
                     <li><a href="<%= articles_path %>">статьи о продукции</a></li>
-                    <li><a href="<%= cart_path %>">корзина</a></li>
+                    <li><%= link_to_cart 'корзина' %></li>
                 	<li><a href="/dostavka">доставка и оплата</a></li>
                 </ul>
 				<div id="search">
