@@ -1,13 +1,6 @@
 # coding: utf-8
 
 module ProductsHelper
-  def product_price(product, *options)
-    case product.class
-      when Product then product.master.price.to_s + " грн."
-      when LineItem then debug(product)
-    end
-  end
-
   def product_price(product_or_variant, options={})
     options.assert_valid_keys(:format_as_currency, :show_vat_text)
     options.reverse_merge! :format_as_currency => true, :show_vat_text => Spree::Config[:show_price_inc_vat]

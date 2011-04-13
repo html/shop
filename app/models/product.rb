@@ -18,6 +18,8 @@
 # Sum of on_hand each variant's inventory level determine "on_hand" level for the product.
 #
 class Product < ActiveRecord::Base
+  scope :including_master, :include => :master
+  default_scope including_master.where('variants.price != 0')
   has_many :product_option_types, :dependent => :destroy
   has_many :option_types, :through => :product_option_types
   has_many :product_properties, :dependent => :destroy
