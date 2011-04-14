@@ -12,7 +12,7 @@ module ApplicationHelper
     if image
       image_tag image.attachment.url(:product_list), :title => image.alt, :alt => image.alt
     else
-      "Картинка отсутствует"
+      image_tag Image.new.attachment.url
     end
   end
 

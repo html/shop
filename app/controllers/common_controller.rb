@@ -56,7 +56,7 @@ class CommonController < Spree::BaseController
 
   def product_by_manufacturer
     @taxon = Taxon.find_by_name params[:manufacturer]
-    @product = @taxon.product.availables.find(params[:id])
+    @product = @taxon.products.available.find(params[:id])
 
     Breadcrumbs.add_main.add_manufacturer(@taxon).add_product_by_manufacturer(@taxon, @product)
 

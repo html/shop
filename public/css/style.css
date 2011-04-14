@@ -39,8 +39,8 @@
 
 #content{width:630px;height:1000px}
 .breadcrumbs{padding:20px 0px 0px 0px;height:20px}
-.breadcrumbs a{color:#e7c650;font:16px MyriadProLight;text-decoration:none}
-.breadcrumbs a:hover{color:#e7c650;font:16px MyriadProLight;text-decoration:underline;background:#d5a400}
+.breadcrumbs a{color:#770000;font:16px MyriadProLight;text-decoration:none}
+.breadcrumbs a:hover{font:16px MyriadProLight;text-decoration:underline;}
 
 .fotoblock{width:280px;height:320px;float:left}
 .secondcol{margin:0px 0px 0px 48px}

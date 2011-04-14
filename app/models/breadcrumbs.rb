@@ -26,22 +26,26 @@ class Breadcrumbs
   end
 
   def self.add_manufacturer(manufacturer)
-    @@breadcrumbs << { :link => @@controller.by_manufacturer_path(manufacturer.name), :title => manufacturer.name }
+    @@breadcrumbs << { :link => @@controller.by_manufacturer_path(manufacturer.name), :title => @@controller.view_context.truncate(manufacturer.name, :length => 30) }
     self
   end
 
+  def self.product_name(product)
+    @@controller.view_context.truncate(product.name, :length => 30)
+  end
+
   def self.add_product_by_manufacturer(manufacturer, product)
-    @@breadcrumbs << { :link => @@controller.product_by_manufacturer_path(manufacturer.name), :title => product.name }
+    @@breadcrumbs << { :link => @@controller.product_by_manufacturer_path(manufacturer.name), :title => product_name(product) }
     self
   end
 
   def self.add_product_by_type(product_type, product)
-    @@breadcrumbs << { :link => @@controller.product_by_type_path(product_type.name, product.id), :title => product.name }
+    @@breadcrumbs << { :link => @@controller.product_by_type_path(product_type.name, product.id), :title => product_name(product) }
     self
   end
 
   def self.add_product_by_type_and_manufacturer(manufacturer, product_type, product)
-    @@breadcrumbs << { :link => @@controller.product_by_manufacturer_and_type_path(manufacturer.name, product_type.name, product.id), :title => product.name }
+    @@breadcrumbs << { :link => @@controller.product_by_manufacturer_and_type_path(manufacturer.name, product_type.name, product.id), :title => product_name(product) }
     self
   end
 
