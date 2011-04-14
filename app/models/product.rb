@@ -19,7 +19,6 @@
 #
 class Product < ActiveRecord::Base
   scope :including_master, :include => :master
-  default_scope including_master.where('variants.price != 0')
   has_many :product_option_types, :dependent => :destroy
   has_many :option_types, :through => :product_option_types
   has_many :product_properties, :dependent => :destroy
@@ -74,7 +73,7 @@ class Product < ActiveRecord::Base
   # default product scope only lists available and non-deleted products
   scope :not_deleted,     where("products.deleted_at is NULL")
 
-  scope :available,       lambda { |*on| where("products.available_on <= ?", on.first || Time.zone.now ) }
+  scope :available,       lambda { |*on| including_master.where('variants.price != 0').where("products.available_on <= ?", on.first || Time.zone.now ) }
 
   #RAILS 3 TODO - this scope doesn't match the original 2.3.x version, needs attention (but it works)
   scope :active,          lambda{ not_deleted.available }

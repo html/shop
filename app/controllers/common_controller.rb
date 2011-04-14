@@ -16,9 +16,9 @@ class CommonController < Spree::BaseController
   def production_by_type
     @taxon = Taxon.find_by_name params[:slug]
     if params[:page] && params[:page] == 'all'
-      @products = @taxon.products
+      @products = @taxon.products.available
     else
-      @products = @taxon.products.paginate(:page => params[:page], :per_page => 6)
+      @products = @taxon.products.available.paginate(:page => params[:page], :per_page => 6)
     end
     Breadcrumbs.add_main.add_type(@taxon)
   end
@@ -28,9 +28,9 @@ class CommonController < Spree::BaseController
     Breadcrumbs.add_main.add_manufacturer(@taxon)
 
     if params[:page] && params[:page] == 'all'
-      @products = @taxon.products
+      @products = @taxon.products.available
     else
-      @products = @taxon.products.paginate(:page => params[:page], :per_page => 6)
+      @products = @taxon.products.available.paginate(:page => params[:page], :per_page => 6)
     end
   end
 
@@ -39,9 +39,9 @@ class CommonController < Spree::BaseController
     @type = Taxon.find_by_name params[:slug]
 
     if params[:page] && params[:page] == 'all'
-      @products = @manufacturer.products
+      @products = @manufacturer.products.available
     else
-      @products = @manufacturer.products.paginate(:page => params[:page], :per_page => 6, :joins => :taxons)
+      @products = @manufacturer.products.available.paginate(:page => params[:page], :per_page => 6, :joins => :taxons)
     end
 
     Breadcrumbs.add_main.add_manufacturer(@manufacturer).add_type_after_manufacturer(@manufacturer, @type)
@@ -49,14 +49,14 @@ class CommonController < Spree::BaseController
 
   def product_by_type
     @taxon = Taxon.find_by_name params[:slug]
-    @product = @taxon.products.find(params[:id])
+    @product = @taxon.products.available.find(params[:id])
 
     Breadcrumbs.add_main.add_type(@taxon).add_product_by_type(@taxon, @product)
   end
 
   def product_by_manufacturer
     @taxon = Taxon.find_by_name params[:manufacturer]
-    @product = @taxon.products.find(params[:id])
+    @product = @taxon.product.availables.find(params[:id])
 
     Breadcrumbs.add_main.add_manufacturer(@taxon).add_product_by_manufacturer(@taxon, @product)
 
@@ -66,7 +66,7 @@ class CommonController < Spree::BaseController
   def product_by_manufacturer_and_type
     @manufacturer = Taxon.find_by_name params[:manufacturer]
     @product_type = Taxon.find_by_name params[:slug]
-    @product = @manufacturer.products.find(params[:id])
+    @product = @manufacturer.products.available.find(params[:id])
 
     Breadcrumbs.add_main.add_manufacturer(@manufacturer).add_type_after_manufacturer(@manufacturer, @product_type).add_product_by_type_and_manufacturer(@manufacturer, @product_type, @product)
 
