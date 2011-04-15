@@ -22,7 +22,7 @@
           <%= render :partial => 'form', :locals => {:order_form => order_form} %>
         <% end %>
 
-          <h3 style="float:right"><%= "#{t("subtotal")}: #{order_price(@order)}" %></h3>
+          <h3 style="float:right"><%= "Итого: #{order_price(@order)}" %></h3>
           <div class="clear"></div>
         <div id="subtotal" style="padding:10px;width:100%">
           <div class="links">
