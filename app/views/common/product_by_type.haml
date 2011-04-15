@@ -1,3 +1,4 @@
+- # Similar to app/views/products/show.haml
 - content_for :body_class do 
   izdeliya
 .name
@@ -21,6 +22,9 @@
           \:
         %td
           = raw prop.value.gsub("\n", "<br />")
+    %tr 
+      %td Номенклатурный номер
+      %td= @product.sku
   %br
   Цена: 
   = product_price @product

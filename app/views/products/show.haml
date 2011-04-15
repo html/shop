@@ -1,3 +1,4 @@
+- # Similar to app/views/common/product_by_type.haml
 - Breadcrumbs.set_controller @controller
 - Breadcrumbs.add_main.add_search(h(params[:search_query])).add_product_with_search(@product, h(params[:search_query]))
 - content_for :body_class do 
@@ -23,6 +24,9 @@
           \:
         %td
           = raw prop.value.gsub("\n", "<br />")
+    %tr 
+      %td Номенклатурный номер
+      %td= @product.sku
   %br
   Цена: 
   = product_price @product
