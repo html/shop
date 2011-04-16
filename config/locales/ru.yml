@@ -1,5 +1,6 @@
 ---
 ru:
+  all_products: Все товары на одной странице
   number:
     currency:
       format:

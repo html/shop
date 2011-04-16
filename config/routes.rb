@@ -14,6 +14,7 @@ Shop::Application.routes.draw do
   match 'articles' => 'common#articles', :as => :articles
   root :to => 'common#main'
   match '/checkout' => 'checkout#update', :state => 'address', :as => :checkout
+  match '/admin/all_products' => "admin/products#index", :as => :admin_all_products, :defaults => { "display_all" => true }
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
