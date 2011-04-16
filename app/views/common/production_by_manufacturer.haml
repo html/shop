@@ -1,27 +1,28 @@
 - content_for :body_class do 
   proizvoditel
-#text
-  = @taxon.description
-  .clear
-- if @products.empty?
-  %div
-    Нет продуктов для данного производителя 
-- else
-  - @products.each do |product|
-    .fotoblock{ :class => cycle('','secondcol') }
-      .name
-        = product.name
-        .clear
-        = product_price product
-      .image
-        %a{:href => product_by_manufacturer_path(@taxon.name, product.id) }
-          = display_product_image_for_list product
-  - if @products.respond_to? :total_pages
-    - paginate_items @products
+.servizy
+  #text
+    = @taxon.description
+    .clear
+  - if @products.empty?
+    %div
+      Нет продуктов для данного производителя 
   - else
-    - content_for :main_uzor_bottom do 
-      :plain
-        style="overflow-y: scroll"
+    - @products.each do |product|
+      .fotoblock{ :class => cycle('','secondcol') }
+        .name
+          = product.name
+          .clear
+          = product_price product
+        .image
+          %a{:href => product_by_manufacturer_path(@taxon.name, product.id) }
+            = display_product_image_for_list product
+    - if @products.respond_to? :total_pages
+      - paginate_items @products
+    - else
+      - content_for :main_uzor_bottom do 
+        :plain
+          style="overflow-y: scroll"
 
-- content_for :left_menu do
-  = render :partial => '/left_menu_for_manufacturer', :manufacturer => @taxon
+  - content_for :left_menu do
+    = render :partial => '/left_menu_for_manufacturer', :manufacturer => @taxon
