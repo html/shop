@@ -39,9 +39,9 @@ class CommonController < Spree::BaseController
     @type = Taxon.find_by_name params[:slug]
 
     if params[:page] && params[:page] == 'all'
-      @products = @manufacturer.products.available
+      @products = Product.available.taxons_id_eq(@manufacturer.id, 1).taxons_id_eq(@type.id, 2)
     else
-      @products = @manufacturer.products.available.paginate(:page => params[:page], :per_page => 6, :joins => :taxons)
+      @products = Product.available.taxons_id_eq(@manufacturer.id, 1).taxons_id_eq(@type.id, 2).paginate(:page => params[:page], :per_page => 6, :joins => :taxons)
     end
 
     Breadcrumbs.add_main.add_manufacturer(@manufacturer).add_type_after_manufacturer(@manufacturer, @type)

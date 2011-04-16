@@ -92,6 +92,7 @@ class Product < ActiveRecord::Base
   scope :id_equals, lambda { |input_id| where("products.id = ?", input_id) }
 
   scope :taxons_name_eq, lambda { |name| joins(:taxons).where("taxons.name = ?", name) }
+  scope :taxons_id_eq, lambda { |id, suffix| joins("INNER JOIN products_taxons products_taxons#{suffix} ON products_taxons#{suffix}.product_id = products.id").where("products_taxons#{suffix}.taxon_id = ?", id) }
 
   # ----------------------------------------------------------------------------------------------------------
   #
